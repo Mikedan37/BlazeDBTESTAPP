@@ -43,7 +43,7 @@ Open `BlazeDBTESTAPP.xcodeproj` in Xcode, select the **BlazeDBTESTAPP** macOS ta
 
 ## CI
 
-On push to `main` and on pull requests, [GitHub Actions](.github/workflows/ci.yml) checks out this repo and [`Mikedan37/BlazeDB`](https://github.com/Mikedan37/BlazeDB) as **sibling folders** (same layout as local dev) and runs `xcodebuild` for the macOS app. No test theater—build only, fail fast.
+On push to `main` and on pull requests, [GitHub Actions](.github/workflows/ci.yml) checks out this repo and [`Mikedan37/BlazeDB`](https://github.com/Mikedan37/BlazeDB) as **sibling folders** (same layout as local dev) and runs `xcodebuild` with **code signing disabled** (runners have no Apple dev certificates). The app’s **macOS deployment target** is kept within the range supported by hosted runners’ SDKs (and aligned with BlazeDB’s minimum, currently macOS **15**). No test theater—build only, fail fast.
 
 ## When is this “done”?
 

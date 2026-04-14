@@ -23,6 +23,14 @@ jobs:
           repository: Mikedan37/BlazeDB
           path: BlazeDB
 
+      # GitHub-hosted macOS runners have no Apple dev certs; compile-only, no signing.
+      # Deployment target in the project must be ≤ runner SDK (see MACOSX_DEPLOYMENT_TARGET).
       - name: Build
-        run: xcodebuild -scheme BlazeDBTESTAPP -destination 'platform=macOS' build
+        run: >
+          xcodebuild
+          -scheme BlazeDBTESTAPP
+          -destination 'generic/platform=macOS'
+          CODE_SIGNING_ALLOWED=NO
+          CODE_SIGNING_REQUIRED=NO
+          build
         working-directory: BlazeDBTESTAPP

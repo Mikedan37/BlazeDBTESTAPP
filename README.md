@@ -41,6 +41,10 @@ Optional: use **Debug → Clear all + seed (screenshot demo)** for a known-good 
 
 Open `BlazeDBTESTAPP.xcodeproj` in Xcode, select the **BlazeDBTESTAPP** macOS target, and run. The BlazeDB package resolves from `../BlazeDB` (sibling checkout).
 
+## CI
+
+On push to `main` and on pull requests, [GitHub Actions](.github/workflows/ci.yml) checks out this repo and [`Mikedan37/BlazeDB`](https://github.com/Mikedan37/BlazeDB) as **sibling folders** (same layout as local dev) and runs `xcodebuild` for the macOS app. No test theater—build only, fail fast.
+
 ## When is this “done”?
 
 Per project intent: tabs work, seed/reset is trustworthy, persistence survives relaunch, UI is screenshot-worthy, and the app helps explain BlazeDB and surface API friction—without turning into a second product.

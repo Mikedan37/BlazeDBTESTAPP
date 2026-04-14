@@ -1,0 +1,28 @@
+# Minimal build: validates the harness still compiles against BlazeDB main.
+# Sibling layout matches Xcode local path: ../BlazeDB
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout BlazeDBTESTAPP
+        uses: actions/checkout@v4
+        with:
+          path: BlazeDBTESTAPP
+
+      - name: Checkout BlazeDB (sibling for local SwiftPM)
+        uses: actions/checkout@v4
+        with:
+          repository: Mikedan37/BlazeDB
+          path: BlazeDB
+
+      - name: Build
+        run: xcodebuild -scheme BlazeDBTESTAPP -destination 'platform=macOS' build
+        working-directory: BlazeDBTESTAPP

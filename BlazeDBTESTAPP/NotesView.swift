@@ -8,7 +8,7 @@ import BlazeDB
 
 struct NotesView: View {
     @Environment(\.blazeDBClient) private var db
-    @BlazeStorableQuery private var notes: [NoteItem]
+    @BlazeStorableQuery(kind: NoteItem.self) private var notes: [NoteItem]
 
     @State private var searchText = ""
     @State private var showingAdd = false

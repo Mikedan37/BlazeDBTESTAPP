@@ -7,7 +7,7 @@ import SwiftUI
 import BlazeDB
 
 struct MainTabView: View {
-    @BlazeStorableQuery(where: "id", equals: .uuid(AppSettings.singletonID)) private var settingsRows: [AppSettings]
+    @BlazeStorableQuery(kind: AppSettings.self, where: "id", equals: .uuid(AppSettings.singletonID)) private var settingsRows: [AppSettings]
 
     private var accentColor: Color? {
         settingsRows.first?.accentPreference.swiftUIColor

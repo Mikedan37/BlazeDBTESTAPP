@@ -7,7 +7,12 @@ import SwiftUI
 import BlazeDB
 
 struct ActivityLogView: View {
-    @BlazeStorableQuery(orderBy: \ActivityItem.timestamp, descending: true) private var events: [ActivityItem]
+    @BlazeStorableQuery(kind: ActivityItem.self) private var eventsRaw: [ActivityItem]
+
+    /// BlazeDB `main` exposes only `kind:` + optional `sortBy:` string on filtered queries; sort here for newest-first.
+    private var events: [ActivityItem] {
+        eventsRaw.sorted { $0.timestamp > $1.timestamp }
+    }
 
     var body: some View {
         ScrollView {

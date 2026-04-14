@@ -8,11 +8,11 @@ import BlazeDB
 
 struct DebugView: View {
     @Environment(\.blazeDBClient) private var db
-    @BlazeStorableQuery private var checkItems: [CheckItem]
-    @BlazeStorableQuery private var bugs: [BugItem]
-    @BlazeStorableQuery private var todos: [ToDoItem]
-    @BlazeStorableQuery private var notes: [NoteItem]
-    @BlazeStorableQuery private var activity: [ActivityItem]
+    @BlazeStorableQuery(kind: CheckItem.self) private var checkItems: [CheckItem]
+    @BlazeStorableQuery(kind: BugItem.self) private var bugs: [BugItem]
+    @BlazeStorableQuery(kind: ToDoItem.self) private var todos: [ToDoItem]
+    @BlazeStorableQuery(kind: NoteItem.self) private var notes: [NoteItem]
+    @BlazeStorableQuery(kind: ActivityItem.self) private var activity: [ActivityItem]
 
     @State private var lastAction: String = "No actions yet."
 

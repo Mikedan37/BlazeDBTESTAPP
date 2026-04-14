@@ -8,7 +8,7 @@ import BlazeDB
 
 struct SettingsView: View {
     @Environment(\.blazeDBClient) private var db
-    @BlazeStorableQuery(where: "id", equals: .uuid(AppSettings.singletonID)) private var rows: [AppSettings]
+    @BlazeStorableQuery(kind: AppSettings.self, where: "id", equals: .uuid(AppSettings.singletonID)) private var rows: [AppSettings]
 
     var body: some View {
         Form {

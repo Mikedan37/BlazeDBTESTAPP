@@ -29,8 +29,8 @@ enum CheckListSortMode: String, CaseIterable, Identifiable {
 
 struct CheckListView: View {
     @Environment(\.blazeDBClient) private var db
-    @BlazeStorableQuery private var items: [CheckItem]
-    @BlazeStorableQuery(where: "id", equals: .uuid(AppSettings.singletonID)) private var settingsRows: [AppSettings]
+    @BlazeStorableQuery(kind: CheckItem.self) private var items: [CheckItem]
+    @BlazeStorableQuery(kind: AppSettings.self, where: "id", equals: .uuid(AppSettings.singletonID)) private var settingsRows: [AppSettings]
 
     @State private var showingAddSheet = false
     @State private var searchText = ""

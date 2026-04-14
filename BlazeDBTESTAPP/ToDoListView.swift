@@ -40,8 +40,8 @@ struct ToDoItem: BlazeStorable {
 
 struct ToDoListView: View {
     @Environment(\.blazeDBClient) private var db
-    @BlazeStorableQuery private var items: [ToDoItem]
-    @BlazeStorableQuery(where: "id", equals: .uuid(AppSettings.singletonID)) private var settingsRows: [AppSettings]
+    @BlazeStorableQuery(kind: ToDoItem.self) private var items: [ToDoItem]
+    @BlazeStorableQuery(kind: AppSettings.self, where: "id", equals: .uuid(AppSettings.singletonID)) private var settingsRows: [AppSettings]
 
     @State private var showingAddSheet = false
     @State private var searchText = ""

@@ -40,8 +40,8 @@ struct BugItem: BlazeStorable {
 
 struct BugTrackView: View {
     @Environment(\.blazeDBClient) private var db
-    @BlazeStorableQuery private var items: [BugItem]
-    @BlazeStorableQuery(where: "id", equals: .uuid(AppSettings.singletonID)) private var settingsRows: [AppSettings]
+    @BlazeStorableQuery(kind: BugItem.self) private var items: [BugItem]
+    @BlazeStorableQuery(kind: AppSettings.self, where: "id", equals: .uuid(AppSettings.singletonID)) private var settingsRows: [AppSettings]
 
     @State private var showingAddSheet = false
     @State private var searchText = ""

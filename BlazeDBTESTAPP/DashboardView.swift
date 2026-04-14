@@ -7,9 +7,9 @@ import SwiftUI
 import BlazeDB
 
 struct DashboardView: View {
-    @BlazeStorableQuery private var checkItems: [CheckItem]
-    @BlazeStorableQuery private var bugs: [BugItem]
-    @BlazeStorableQuery private var todos: [ToDoItem]
+    @BlazeStorableQuery(kind: CheckItem.self) private var checkItems: [CheckItem]
+    @BlazeStorableQuery(kind: BugItem.self) private var bugs: [BugItem]
+    @BlazeStorableQuery(kind: ToDoItem.self) private var todos: [ToDoItem]
 
     private var totalChecklist: Int { checkItems.count }
     private var uncheckedChecklist: Int { checkItems.filter { !$0.isChecked }.count }

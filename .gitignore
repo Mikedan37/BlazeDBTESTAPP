@@ -1,0 +1,22 @@
+# Xcode / Swift
+DerivedData/
+build/
+*.xcuserstate
+*.xccheckout
+*.xcscmblueprint
+xcuserdata/
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# macOS
+.DS_Store
+
+# SwiftPM (keep Package.resolved when checked in — ignore build artifacts only)
+.swiftpm/configuration/registries.json
+.swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
+
+# Cursor / IDE (optional local)
+.cursor/

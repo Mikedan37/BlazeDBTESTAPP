@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		90173A102F88D44000CC5A5A /* BlazeDB in Frameworks */ = {isa = PBXBuildFile; productRef = 90173A0F2F88D44000CC5A5A /* BlazeDB */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		900343722F88D2FD00A2CE91 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90173A102F88D44000CC5A5A /* BlazeDB in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +117,7 @@
 			);
 			name = BlazeDBTESTAPP;
 			packageProductDependencies = (
+				90173A0F2F88D44000CC5A5A /* BlazeDB */,
 			);
 			productName = BlazeDBTESTAPP;
 			productReference = 900343642F88D2FC00A2CE91 /* BlazeDBTESTAPP.app */;
@@ -195,6 +201,9 @@
 			);
 			mainGroup = 9003435B2F88D2FC00A2CE91;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				90173A0E2F88D44000CC5A5A /* XCLocalSwiftPackageReference "../BlazeDB" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 900343652F88D2FC00A2CE91 /* Products */;
 			projectDirPath = "";
@@ -573,6 +582,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		90173A0E2F88D44000CC5A5A /* XCLocalSwiftPackageReference "../BlazeDB" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../BlazeDB;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		90173A0F2F88D44000CC5A5A /* BlazeDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BlazeDB;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9003435C2F88D2FC00A2CE91 /* Project object */;
 }

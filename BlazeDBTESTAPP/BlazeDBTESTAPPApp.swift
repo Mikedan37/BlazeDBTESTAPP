@@ -6,12 +6,19 @@
 //
 
 import SwiftUI
+import BlazeDB
+
+final class AppDatabase {
+    static let shared = AppDatabase()
+    let db = try! BlazeDB.open(name: "myapp", password: "Password123!")
+}
 
 @main
 struct BlazeDBTESTAPPApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainTabView()
+                .blazeDBEnvironment(AppDatabase.shared.db)
         }
     }
 }
